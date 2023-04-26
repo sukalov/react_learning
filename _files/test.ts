@@ -15,3 +15,4 @@ const Vor: Admin = {
     login: 'vanyavor',
     password: '********',
     status: 'moderator'
+}

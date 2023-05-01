@@ -3,12 +3,12 @@
     {
       "id": 1,
       "content": "HTML is easy",
-      "important": true
+      "important": false
     },
     {
       "id": 2,
       "content": "Browser can execute only JavaScript",
-      "important": true
+      "important": false
     },
     {
       "id": 3,
@@ -27,7 +27,7 @@
     },
     {
       "content": "три два раз",
-      "important": false,
+      "important": true,
       "id": 6
     },
     {
@@ -37,18 +37,28 @@
     },
     {
       "content": "hello world",
-      "important": false,
+      "important": true,
       "id": 8
     },
     {
       "content": "опять двадцать пять",
-      "important": false,
+      "important": true,
       "id": 9
     },
     {
       "content": "интересное кино",
       "important": false,
       "id": 10
+    },
+    {
+      "content": "проверка чек",
+      "important": false,
+      "id": 11
+    },
+    {
+      "content": "ещё проверка",
+      "important": false,
+      "id": 12
     }
   ]
 }

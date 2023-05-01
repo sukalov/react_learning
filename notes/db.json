@@ -8,7 +8,7 @@
     {
       "id": 2,
       "content": "Browser can execute only JavaScript",
-      "important": false
+      "important": true
     },
     {
       "id": 3,
@@ -16,9 +16,39 @@
       "important": true
     },
     {
-      "id": 4,
-      "content": "YO.. Drinking data from the server",
-      "important": true
+      "content": "Yo, we're throwing data to the server!",
+      "important": true,
+      "id": 4
+    },
+    {
+      "content": "раз два три",
+      "important": false,
+      "id": 5
+    },
+    {
+      "content": "три два раз",
+      "important": false,
+      "id": 6
+    },
+    {
+      "content": "три два раз",
+      "important": false,
+      "id": 7
+    },
+    {
+      "content": "hello world",
+      "important": false,
+      "id": 8
+    },
+    {
+      "content": "опять двадцать пять",
+      "important": false,
+      "id": 9
+    },
+    {
+      "content": "интересное кино",
+      "important": false,
+      "id": 10
     }
   ]
 }

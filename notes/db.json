@@ -19,46 +19,6 @@
       "content": "Yo, we're throwing data to the server!",
       "important": false,
       "id": 4
-    },
-    {
-      "content": "раз два три",
-      "important": true,
-      "id": 5
-    },
-    {
-      "content": "три два раз",
-      "important": false,
-      "id": 6
-    },
-    {
-      "content": "три два раз",
-      "important": false,
-      "id": 7
-    },
-    {
-      "content": "hello world",
-      "important": true,
-      "id": 8
-    },
-    {
-      "content": "опять двадцать пять",
-      "important": false,
-      "id": 9
-    },
-    {
-      "content": "интересное кино",
-      "important": true,
-      "id": 10
-    },
-    {
-      "content": "проверка чек",
-      "important": false,
-      "id": 11
-    },
-    {
-      "content": "ещё проверка",
-      "important": true,
-      "id": 12
     }
   ]
 }

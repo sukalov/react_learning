@@ -1,8 +1,9 @@
 import axios from 'axios'
-const baseUrl = 'http://localhost:3001/notes'
+const baseUrl = 'http://localhost:3001/api/notes'
+const config = {headers: { CORS: 'Access-Control-Allow-Origin'}}
 
 const getAll = async () => {
-    const request = axios.get(baseUrl)
+    const request = axios.get(baseUrl, config)
     return request.then(response => response.data)
   }
 

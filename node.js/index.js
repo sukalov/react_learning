@@ -3,6 +3,7 @@ const cors = require('cors')
 
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 let notes = [
 {
@@ -39,7 +40,7 @@ app.get('/api/notes/:id', (request, response) => {
     if (note) {
     response.json(note)
     } else {
-        response.status(404).end()
+        response.body(note)
     }
 })
 
@@ -51,13 +52,14 @@ app.delete('/api/notes/:id', (request, response) => {
 
 const generateId = () => {
     const maxId = notes.length > 0
-        ? matchMedia.max(...notes.map(n => n.id))
+        ? Math.max(...notes.map(n => n.id))
         : 0
     return maxId + 1
 }
 
 app.post('/api/notes', (request, response) => {
-    const body = request.body()
+    const body = request.body
+    console.log(body)
 
     if (!body.content) {
         return response.status(400).json({
@@ -71,7 +73,7 @@ app.post('/api/notes', (request, response) => {
         id: generateId()
     }
 
-    notes = mnotes.concat(note)
+    notes = notes.concat(note)
     response.json(note)
 })
 

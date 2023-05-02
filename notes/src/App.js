@@ -1,21 +1,24 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import Note from './components/Note.jsx';
 import noteService from './services/notes.js'
+
+import Notification from './components/Notification.jsx'
+import Note from './components/Note.jsx';
 
 const App = () => {
   const [notes, setNotes] = useState([]);
   const [newNote, setNewNote] = useState('');
-  const [showAll, setShowAll] = useState(true)
+  const [showAll, setShowAll] = useState(true);
+  const [errorMessage, setErrorMessage] = useState(null)
+
 
   useEffect(() => {
     noteService.getAll()
       .then(allNotes => {
-        setNotes(allNotes)
+        console.log(allNotes)
+        setNotes(allNotes.concat({id: allNotes.length + 1, content: 'BULLLSH', important: true}))
       })
   }, [])
-
-  console.log('render', notes.length, 'notes')
 
   const addNote = (event) => {
     event.preventDefault()
@@ -48,26 +51,46 @@ const App = () => {
         setNotes(notes.map(n => n.id !== id ? n : updatedNote))
       })
       .catch(error => {
-        alert(
-          `the note '${note.content}' was already deleted from server`
+        setErrorMessage(
+          `Note '${note.content}' was already removed from server`
         )
+        setTimeout(() => {
+          setErrorMessage(null)
+        }, 5000)
         setNotes(notes.filter(n => n.id !== id))
     })
+  }
+
+  const Footer = () => {
+    const footerStyle = {
+      color: 'green',
+      fontStyle: 'italic',
+      fontSize: 16,
+      bottom: 0
+    }
+    return (
+      <div style={footerStyle}>
+        <br />
+        <em>Note app, Department of Computer Science, University of Helsinki 2022</em>
+      </div>
+    )
   }
 
   return (
     <div>
       <h1>Notes</h1>
-      <ul>
+      <Notification message={errorMessage} />
+      <table><tbody>
         {notesToShow.map((note, i) => 
         <Note key={note.id} note={note} toggleImportance={() => toggleImportanceOf(note.id)} />
         )}
-      </ul>
+      </tbody></table>
       <form onSubmit={addNote}>
         <input value={newNote} onChange={(e) => setNewNote(e.target.value)}/>&nbsp;&nbsp;
         <button type="submit">save</button>
       </form> <br />
       <button onClick={myFilter}>show {showAll ? 'important' : 'all' }</button>
+      <Footer />
     </div>
   )
 }

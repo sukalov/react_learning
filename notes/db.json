@@ -3,12 +3,12 @@
     {
       "id": 1,
       "content": "HTML is easy",
-      "important": false
+      "important": true
     },
     {
       "id": 2,
       "content": "Browser can execute only JavaScript",
-      "important": false
+      "important": true
     },
     {
       "id": 3,
@@ -17,17 +17,17 @@
     },
     {
       "content": "Yo, we're throwing data to the server!",
-      "important": true,
+      "important": false,
       "id": 4
     },
     {
       "content": "раз два три",
-      "important": false,
+      "important": true,
       "id": 5
     },
     {
       "content": "три два раз",
-      "important": true,
+      "important": false,
       "id": 6
     },
     {
@@ -42,12 +42,12 @@
     },
     {
       "content": "опять двадцать пять",
-      "important": true,
+      "important": false,
       "id": 9
     },
     {
       "content": "интересное кино",
-      "important": false,
+      "important": true,
       "id": 10
     },
     {
@@ -57,7 +57,7 @@
     },
     {
       "content": "ещё проверка",
-      "important": false,
+      "important": true,
       "id": 12
     }
   ]

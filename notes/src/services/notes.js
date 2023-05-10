@@ -18,9 +18,15 @@ const update = async (id, newObject) => {
   return request.then(response => response.data)
 }
 
+const del = async (id) => {
+  const request = axios.delete(`${baseUrl}/${id}`)
+  return request
+}
+
 // eslint-disable-next-line
 export default { 
     getAll,
     create,
-    update 
+    update,
+    del
 }

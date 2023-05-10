@@ -61,6 +61,11 @@ const App = () => {
     })
   }
 
+  const deleteNote = (note) => {
+    noteService.del(note.id)
+    console.log(note)
+  }
+
   const Footer = () => {
     const footerStyle = {
       color: 'green',
@@ -82,7 +87,7 @@ const App = () => {
       <Notification message={errorMessage} />
       <table><tbody>
         {notesToShow.map((note, i) => 
-        <Note key={note.id} note={note} toggleImportance={() => toggleImportanceOf(note.id)} />
+        <Note key={note.id} note={note} deleteNote={() => deleteNote(note)}toggleImportance={() => toggleImportanceOf(note.id)} />
         )}
       </tbody></table>
       <form onSubmit={addNote}>
